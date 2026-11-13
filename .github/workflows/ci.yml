@@ -1,0 +1,32 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff pefile cryptography dissect.util
+      - name: Lint
+        run: ruff check .
+      - name: Format
+        run: ruff format --check .
+      - name: No comments or docstrings
+        run: python checks/no_comments.py
+      - name: Byte-compile
+        run: python -m compileall -q .
+      - name: Command-line help works
+        run: |
+          for tool in $(find families samples -name '*.py' 2>/dev/null); do
+            python "$tool" --help > /dev/null
+          done
