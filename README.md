@@ -7,6 +7,7 @@ Everything here is static. The tools parse files; they never run them.
 | Tool | What it does | Write-up |
 |---|---|---|
 | [families/2cloader](families/2cloader) | 2CLoader config extraction and payload decryption | [2CLoader keys its payload to its own padding](https://stateless-re.github.io/2026/2cloader-keys-its-payload-to-its-own-padding/) |
+| [families/remus](families/remus) | Remus (x64) C2 slots, Ethereum fallback and build tag | [What 2CLoader delivered: Vidar on Epic Games profiles, Remus on Ethereum](https://stateless-re.github.io/2026/what-2cloader-delivered/) |
 
 ## Layout
 
