@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install ruff pefile cryptography dissect.util
+      - run: pip install ruff pefile cryptography dissect.util olefile
       - name: Lint
         run: ruff check .
       - name: Format
