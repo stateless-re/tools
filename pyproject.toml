@@ -8,6 +8,7 @@ dependencies = [
     "pefile>=2023.2.7",
     "cryptography>=41",
     "dissect.util>=3.0",
+    "olefile>=0.46",
 ]
 
 [tool.ruff]
