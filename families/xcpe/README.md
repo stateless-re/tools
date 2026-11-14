@@ -60,9 +60,9 @@ python extract.py sdk <hex body from dcsdk.100ulife.com>
 
 ## How it works
 
-x.cpe wraps every request to and response from its configuration server as `{"encryption": base64(AES-128-CFB(json))}`, with the 16-byte ASCII string `Iz4iWGbzcm2pHjSm` as both key and IV. The extractor reads the key from the static initializer of `x.cpe.util.EncryptUtils` rather than assuming it.
+x.cpe wraps every request to and response from its configuration server (`/router/config/*`, or `/cpe/config/*` in 6.5.0) as `{"encryption": base64(AES-128-CFB(json))}`, with the 16-byte ASCII string `Iz4iWGbzcm2pHjSm` as both key and IV. The extractor reads the key from the static initializer of `x.cpe.util.EncryptUtils` rather than assuming it.
 
-The MzSDK shell (`com.ocean.zoe`) hides its strings with StringFog, but passes the charset name `UTF-8` where the XOR key belongs, so every string is `base64` XORed with the 5 bytes `UTF-8`. The extractor pairs each `const-string` with the static field it lands in. The embedded core `letu.jet` is the jar XORed with `letu` (the resource's file stem). The core talks to `dcsdk.100ulife.com` with AES-256-ECB (PKCS#5), the key being the 32 ASCII characters `DE252F9AC7624D723212E7E70972134D`, and sends and receives uppercase hex.
+The MzSDK shell (`com.ocean.zoe`) hides its strings with StringFog, but passes the charset name `UTF-8` where the XOR key belongs, so every string is `base64` XORed with the 5 bytes `UTF-8`. The extractor pairs each `const-string` with the static field it lands in. The embedded core `letu.jet` is the jar XORed with `letu` (the resource's file stem). The core asks `dcsdk.100ulife.com` for core updates and plugin lists (the files come from URLs in its answers) with AES-256-ECB (PKCS#5), the key being the 32 ASCII characters `DE252F9AC7624D723212E7E70972134D`, and sends and receives uppercase hex.
 
 The `config` and `sdk` decrypt modes are tested by round trip against the scheme reconstructed from the code. No captured traffic was available to test them on.
 
