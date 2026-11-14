@@ -9,6 +9,7 @@ Everything here is static. The tools parse files; they never run them.
 | [families/2cloader](families/2cloader) | 2CLoader config extraction and payload decryption | [2CLoader keys its payload to its own padding](https://stateless-re.github.io/2026/2cloader-keys-its-payload-to-its-own-padding/) |
 | [families/remus](families/remus) | Remus (x64) C2 slots, Ethereum fallback and build tag | [What 2CLoader delivered: Vidar on Epic Games profiles, Remus on Ethereum](https://stateless-re.github.io/2026/what-2cloader-delivered/) |
 | [families/squawkdoor](families/squawkdoor) | SquawkDoor (SquadC) config from MSI installers, payload files or carved images | [SquadC is SquawkDoor, and one of its installers is SparrowDoor](https://stateless-re.github.io/2026/squadc-is-squawkdoor/) |
+| [families/antino](families/antino) | Antino config (Microsoft 365 tenant, app, user, remark) from builds or dumps; Gen1 session ID decoding | [Antino's first sleep mask caught every crash in the process](https://stateless-re.github.io/2026/antino-sleep-mask/) |
 
 ## Layout
 
