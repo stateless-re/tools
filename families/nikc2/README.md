@@ -80,26 +80,26 @@ All twenty files in the write-up (18 agents, 1 PyInstaller binder, 1 FileCrypt-p
 
 | SHA-256 | Format | Primary C2 | Result |
 |---|---|---|---|
-| `0008c95fb43bd97dec04c408b61a66a38f59a7912e4d4a058647ef14407463f2` | v1 | https://191.44.109[.]125:443 | ok |
-| `0fb93dbb9525004f9e5b1ee4bcd6b6638700bee576413e955c8c96292fa964ee` | v1 | https://2.26.51[.]12:443 | ok |
-| `1fee4cd8d3560e6c60ba50451860adf6e705f26fd3fe1c1ccc058f4e8b13073a` | v1 | https://total-sitevv[.]lol:443 | ok |
-| `2a01056369cc691f5bed6bd2654930a81d1bc240a568a0d5b209aceef3b5c9c9` | v1 | https://total-sitevv[.]lol:443 | ok |
-| `30817712277bba54e4cb8640f4005aad35f5172f88cf046aea545d029e12ccba` | v1 | https://total-sitevv[.]lol:443 | ok |
-| `46bea5c1ac50bbcb0fb700e6e8f46d5f09c8ea61c74f677bd19342bace670052` | v1 (inner `e7f51534b110`) | https://2.26.49[.]181:443 | ok |
-| `507436d5132cefeea7e35e3481c5726f00a90e041a6bbb55cfcf50b51e2b3b73` | v1 | https://2.26.49[.]181:443 | ok |
+| `0008c95fb43bd97dec04c408b61a66a38f59a7912e4d4a058647ef14407463f2` | v1 | hxxps://191.44.109[.]125:443 | ok |
+| `0fb93dbb9525004f9e5b1ee4bcd6b6638700bee576413e955c8c96292fa964ee` | v1 | hxxps://2.26.51[.]12:443 | ok |
+| `1fee4cd8d3560e6c60ba50451860adf6e705f26fd3fe1c1ccc058f4e8b13073a` | v1 | hxxps://total-sitevv[.]lol:443 | ok |
+| `2a01056369cc691f5bed6bd2654930a81d1bc240a568a0d5b209aceef3b5c9c9` | v1 | hxxps://total-sitevv[.]lol:443 | ok |
+| `30817712277bba54e4cb8640f4005aad35f5172f88cf046aea545d029e12ccba` | v1 | hxxps://total-sitevv[.]lol:443 | ok |
+| `46bea5c1ac50bbcb0fb700e6e8f46d5f09c8ea61c74f677bd19342bace670052` | v1 (inner `e7f51534b110`) | hxxps://2.26.49[.]181:443 | ok |
+| `507436d5132cefeea7e35e3481c5726f00a90e041a6bbb55cfcf50b51e2b3b73` | v1 | hxxps://2.26.49[.]181:443 | ok |
 | `5a39bd95d430a1093b3d179d100389ee2cf60226518b82e02572f3e25df2f803` | v2 | protected (v2) | ok |
-| `5d25efba2119f52d08214a590fedb45a5c9fe5e2850fd87e7bca24c92745e6d1` | v1 | https://total-sitevv[.]lol:443 | ok |
-| `626619e1a2ba0cfaf7809ad3fed0d8958762379bcdc549125699ce7e6a938500` | v1 | https://2.26.49[.]181:443 | ok |
-| `6583eb22ca554e749b647d68ae76f7279a8dc538196ebde1412669357a027de5` | v1 | https://total-sitevv[.]lol:443 | ok |
-| `876b1dbc4bcfc548d1fbf8ac8d4fe7dfa15df80e5085372397dffb814c5e5352` | v1 | https://191.44.109[.]125:443 | ok |
-| `99573a79f393299049216237d0d23761d67f6a8507a7a0cfe17cb30837f68f00` | v1 | https://total-sitevv[.]lol:443 | ok |
-| `9b228bf578fee16d5ccd880ecafcc7159d3678ef09d7fa5c807d423f97d48a9e` | v1 | https://2.26.49[.]181:443 | ok |
-| `9d9d9901b318cf30a8764f8b1a4d042e9c73bc22cfd39e159f81ba895a898920` | v1 (inner `876b1dbc4bcf`) | https://191.44.109[.]125:443 | ok |
-| `a7279f2425746deafef5c2ff6ebe612c7cc6062601be37d83e07ecdd1bb72ba2` | v1 | https://87.120.196[.]120:443 | ok |
-| `ae38f1181c9dd0db7224d6023e335eb2cdabb0f441906d14ffba8602b7abca3c` | v1 | https://total-sitevv[.]lol:443 | ok |
-| `bf83345ca66bdc4bd45ade608a06361d18927dd80351e9a1d8cbe8eda5d78402` | v1 | https://total-sitevv[.]lol:443 | ok |
-| `d0abbd4e13d026cea0f62d250080f721a37c3a033afb6b5ec368b31e07243f24` | v1 | https://total-sitevv[.]lol:443 | ok |
-| `e7f51534b1106707a7e86b1531dfd4444639b824baec66c5e1ad8005b1f7da0a` | v1 | https://2.26.49[.]181:443 | ok |
+| `5d25efba2119f52d08214a590fedb45a5c9fe5e2850fd87e7bca24c92745e6d1` | v1 | hxxps://total-sitevv[.]lol:443 | ok |
+| `626619e1a2ba0cfaf7809ad3fed0d8958762379bcdc549125699ce7e6a938500` | v1 | hxxps://2.26.49[.]181:443 | ok |
+| `6583eb22ca554e749b647d68ae76f7279a8dc538196ebde1412669357a027de5` | v1 | hxxps://total-sitevv[.]lol:443 | ok |
+| `876b1dbc4bcfc548d1fbf8ac8d4fe7dfa15df80e5085372397dffb814c5e5352` | v1 | hxxps://191.44.109[.]125:443 | ok |
+| `99573a79f393299049216237d0d23761d67f6a8507a7a0cfe17cb30837f68f00` | v1 | hxxps://total-sitevv[.]lol:443 | ok |
+| `9b228bf578fee16d5ccd880ecafcc7159d3678ef09d7fa5c807d423f97d48a9e` | v1 | hxxps://2.26.49[.]181:443 | ok |
+| `9d9d9901b318cf30a8764f8b1a4d042e9c73bc22cfd39e159f81ba895a898920` | v1 (inner `876b1dbc4bcf`) | hxxps://191.44.109[.]125:443 | ok |
+| `a7279f2425746deafef5c2ff6ebe612c7cc6062601be37d83e07ecdd1bb72ba2` | v1 | hxxps://87.120.196[.]120:443 | ok |
+| `ae38f1181c9dd0db7224d6023e335eb2cdabb0f441906d14ffba8602b7abca3c` | v1 | hxxps://total-sitevv[.]lol:443 | ok |
+| `bf83345ca66bdc4bd45ade608a06361d18927dd80351e9a1d8cbe8eda5d78402` | v1 | hxxps://total-sitevv[.]lol:443 | ok |
+| `d0abbd4e13d026cea0f62d250080f721a37c3a033afb6b5ec368b31e07243f24` | v1 | hxxps://total-sitevv[.]lol:443 | ok |
+| `e7f51534b1106707a7e86b1531dfd4444639b824baec66c5e1ad8005b1f7da0a` | v1 | hxxps://2.26.49[.]181:443 | ok |
 
 ## Credit
 
