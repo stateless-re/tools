@@ -10,6 +10,7 @@ Everything here is static. The tools parse files; they never run them.
 | [families/remus](families/remus) | Remus (x64) C2 slots, Ethereum fallback and build tag | [What 2CLoader delivered: Vidar on Epic Games profiles, Remus on Ethereum](https://stateless-re.github.io/2026/what-2cloader-delivered/) |
 | [families/squawkdoor](families/squawkdoor) | SquawkDoor (SquadC) config from MSI installers, payload files or carved images | [SquadC is SquawkDoor, and one of its installers is SparrowDoor](https://stateless-re.github.io/2026/squadc-is-squawkdoor/) |
 | [families/antino](families/antino) | Antino config (Microsoft 365 tenant, app, user, remark) from builds or dumps; Gen1 session ID decoding | [Antino's first sleep mask caught every crash in the process](https://stateless-re.github.io/2026/antino-sleep-mask/) |
+| [families/nikc2](families/nikc2) | NIK C2 (NIKRAT) agent configs, derived AES keys and certificate pins; unwraps FileCrypt and the PyInstaller binder | [Twenty NIK C2 files, one panel account, and a build that can't read its own config](https://stateless-re.github.io/2026/nik-c2-config/) |
 
 ## Layout
 
