@@ -11,6 +11,7 @@ Everything here is static. The tools parse files; they never run them.
 | [families/squawkdoor](families/squawkdoor) | SquawkDoor (SquadC) config from MSI installers, payload files or carved images | [SquadC is SquawkDoor, and one of its installers is SparrowDoor](https://stateless-re.github.io/2026/squadc-is-squawkdoor/) |
 | [families/antino](families/antino) | Antino config (Microsoft 365 tenant, app, user, remark) from builds or dumps; Gen1 session ID decoding | [Antino's first sleep mask caught every crash in the process](https://stateless-re.github.io/2026/antino-sleep-mask/) |
 | [families/nikc2](families/nikc2) | NIK C2 (NIKRAT) agent configs, derived AES keys and certificate pins; unwraps FileCrypt and the PyInstaller binder | [Twenty NIK C2 files, one panel account, and a build that can't read its own config](https://stateless-re.github.io/2026/nik-c2-config/) |
+| [samples/ecaa3ca51c1e](samples/ecaa3ca51c1e) | FrauPDF installer: string tables, URLs, embedded files, payload blob and `uid` decoding | [FrauPDF's installer checks its own file name before it asks for a payload](https://stateless-re.github.io/2026/fraupdf-installer/) |
 
 ## Layout
 
@@ -22,7 +23,7 @@ Each folder has a README with usage, example output, the sample hashes it was te
 ## Running
 
 ```sh
-pip install pefile cryptography dissect.util olefile
+pip install pefile cryptography dissect.util olefile dnfile
 python families/2cloader/extract.py SAMPLE.exe
 ```
 
