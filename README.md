@@ -13,6 +13,7 @@ Everything here is static. The tools parse files; they never run them.
 | [families/nikc2](families/nikc2) | NIK C2 (NIKRAT) agent configs, derived AES keys and certificate pins; unwraps FileCrypt and the PyInstaller binder | [Twenty NIK C2 files, one panel account, and a build that can't read its own config](https://stateless-re.github.io/2026/nik-c2-config/) |
 | [families/k2f](families/k2f) | k2f LuaJIT bundle (NIKKE launcher): Prometheus string table from any build, modules and build tag | [The NIKKE launcher's k2f agent decrypts the saved login with a key made from the MAC address](https://stateless-re.github.io/2026/k2f-nikke-launcher-bundle/) |
 | [families/armorsteal](families/armorsteal) | Armorsteal module config from Pyarmor-Static-Unpack-1shot disassembly: C2 list, package hash pins, task-signing key, clipper wallets, miner pin; XMRig pools including embedded configs | [Armorsteal's Pyarmor key is the shared trial key, and its boot task starts a miner](https://stateless-re.github.io/2026/armorsteal-pyarmor-trial-miner/) |
+| [families/xcpe](families/xcpe) | x.cpe (XCPE TV-box botnet): signer and AOSP test-key check, config AES key, hosts and MQTT topics; decodes the hidden MzSDK loader (StringFog, letu.jet core jar, C2 URLs and key); decrypts config and SDK traffic | [Three x.cpe builds hide a second loader, and its string key is "UTF-8"](https://stateless-re.github.io/2026/xcpe-mzsdk-loader/) |
 | [samples/ecaa3ca51c1e](samples/ecaa3ca51c1e) | FrauPDF installer: string tables, URLs, embedded files, payload blob and `uid` decoding | [FrauPDF's installer checks its own file name before it asks for a payload](https://stateless-re.github.io/2026/fraupdf-installer/) |
 
 ## Layout
@@ -25,7 +26,7 @@ Each folder has a README with usage, example output, the sample hashes it was te
 ## Running
 
 ```sh
-pip install pefile cryptography dissect.util olefile dnfile
+pip install pefile cryptography dissect.util olefile dnfile androguard
 python families/2cloader/extract.py SAMPLE.exe
 ```
 
