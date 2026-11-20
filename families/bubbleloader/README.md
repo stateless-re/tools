@@ -83,4 +83,4 @@ The 24 hashes from the ReversingLabs report, all from Hybrid Analysis. Payloads 
 
 Robert Simmons (ReversingLabs), [Threat Researcher's Notebook: BubbleLoader](https://www.reversinglabs.com/blog/threat-researchers-notebook-bubbleloader), documented the entry-point patch, the PNG pair and the stage-3 loader, and published the hashes.
 
-Write-up: [All 24 BubbleLoader samples carry one stealer kit, and none of it runs without a command-line argument](https://stateless-re.github.io/2026/bubbleloader-winrate/)
+Write-up: [BubbleLoader's 24 samples carry one stealer, its downloader, or a stub that only exits](https://stateless-re.github.io/2026/bubbleloader-winrate/)

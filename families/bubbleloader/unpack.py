@@ -21,8 +21,11 @@ ADD_RDX = re.compile(rb"\x48\x81\xc2(.{4})", re.S)
 ADD_R8 = re.compile(rb"\x49\x81\xc0(.{4})", re.S)
 ADD_RBX = re.compile(rb"(?:\x48\x81\xc3|\x49\x81\xc1)(.{4})", re.S)
 UPTIME = re.compile(rb"\x0f\x31.{0,16}\x48\xb9(.{8})", re.S)
-TSC_ADD = re.compile(rb"(?<!\x48)\xb9(.{4}).{0,16}?\x48\x8d\x0c\x01", re.S)
-KUSER = re.compile(rb"\xb9\x00\x00\xfe\x7f.{0,64}?\xb9(.{4}).{0,16}?\x48\x39\xc8", re.S)
+TSC_ADD = re.compile(rb"(?<!\x48)\xb9(.{4})(?:\x48\xc1\xe1(.))?.{0,16}?\x48\x8d\x0c\x01", re.S)
+KUSER = re.compile(
+    rb"\xb9\x00\x00\xfe\x7f.{0,64}?\xb9(.{4})(?:\x48\xc1\xe1(.))?.{0,16}?\x48\x39\xc8",
+    re.S,
+)
 XOR_AA_NAMES = [b"GetLastInputInfo", b"user32.dll"]
 BEING_DEBUGGED = re.compile(rb"\x80\x78\x02\x00")
 CPUS = re.compile(rb"\x80\xb8\xb8\x00\x00\x00(.)", re.S)
@@ -38,6 +41,13 @@ def u32(b: bytes) -> int:
 
 def s32(b: bytes) -> int:
     return struct.unpack("<i", b)[0]
+
+
+def shifted(m: re.Match) -> int:
+    value = u32(m.group(1))
+    if m.group(2) is not None:
+        value <<= m.group(2)[0]
+    return value
 
 
 def xor_repeat(data: bytes, key: bytes) -> bytes:
@@ -114,13 +124,13 @@ def stage2(buf: bytearray, off: int, src_rva: int) -> dict:
     cpu = CPUS.search(code)
     if cpu:
         gates["min_cpus"] = cpu.group(1)[0]
-    adds = [u32(m.group(1)) for m in TSC_ADD.finditer(code)]
+    adds = [shifted(m) for m in TSC_ADD.finditer(code)]
     if len(adds) >= 2:
         gates["max_tsc_gap"] = adds[0]
         gates["busy_wait_cycles"] = adds[1]
     kuser = KUSER.search(code)
     if kuser:
-        gates["min_interrupt_time_100ns"] = u32(kuser.group(1))
+        gates["min_interrupt_time_100ns"] = shifted(kuser)
     if BEING_DEBUGGED.search(code):
         gates["peb_being_debugged"] = True
     whole = bytes(buf[off:])
