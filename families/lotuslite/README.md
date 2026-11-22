@@ -1,6 +1,6 @@
 # Lotuslite V2 (fake PDFgear CommonLib.dll)
 
-Reads a Lotuslite V2 `CommonLib.dll`, the .NET backdoor that Antares Research attributed to Mustang Panda, and prints its built-in configuration as JSON. It also prints the embedded RSA public key's fingerprint and the strings that name the instance lock and the persistence (folder, Run value, task, shortcut).
+Reads a Lotuslite V2 `CommonLib.dll`, the .NET backdoor that Antares Research attributed to Mustang Panda, and prints its built-in configuration as JSON. It also prints the embedded RSA public key's fingerprint and the strings that name the instance lock, the persistence (folder, Run value, task, shortcut) and any in-memory patch targets (`RuntimeInit.Apply`: `EtwEventWrite` and `AmsiScanBuffer` in the 2.1.16.0 build, empty in the others).
 
 Write-up: [Lotuslite V2 talks to port 53 without speaking DNS](https://stateless-re.github.io/2026/lotuslite-v2-pro1/)
 
@@ -49,7 +49,7 @@ Needs `dnfile`, `pefile` and `cryptography`. Exit status is 1 if any file fails;
 
 ## How it works
 
-The configuration lives in the static constructor of `BeCtrl.Config.ClientDefaults`. Strings are byte arrays initialised from `<PrivateImplementationDetails>` field data and passed to `ClientDefaults.D`, which XORs each byte with a constant (0x55 in every build so far). The tool reads that constant from `D`'s IL, then runs a small stack evaluator over the constructor's IL (`newarr`, `ldtoken` + `InitializeArray`, `stelem`, `stsfld`, calls to `D`). It does the same for `ClientConfig.FromDefaults`, which sets the booleans and timeouts. Nothing is loaded or executed. The RSA key is the manifest resource `BeCtrl.Keys.public.pem`; the strings are the `ldstr` operands of `BeCtrlBootstrap.EnsureStarted` and of every `Persistence` method.
+The configuration lives in the static constructor of `BeCtrl.Config.ClientDefaults`. Strings are byte arrays initialised from `<PrivateImplementationDetails>` field data and passed to `ClientDefaults.D`, which XORs each byte with a constant (0x55 in every build so far). The tool reads that constant from `D`'s IL, then runs a small stack evaluator over the constructor's IL (`newarr`, `ldtoken` + `InitializeArray`, `stelem`, `stsfld`, calls to `D`). It does the same for `ClientConfig.FromDefaults`, which sets the booleans and timeouts. Nothing is loaded or executed. The RSA key is the manifest resource `BeCtrl.Keys.public.pem`; the strings are the `ldstr` operands of `BeCtrlBootstrap.EnsureStarted`, every `Persistence` method and `RuntimeInit.Apply`.
 
 ## Tested on
 

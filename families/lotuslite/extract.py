@@ -62,6 +62,7 @@ CONFIG_FACTORY = ("ClientConfig", "FromDefaults")
 STRING_SOURCES = (
     ("BeCtrlBootstrap", "EnsureStarted"),
     ("Persistence", None),
+    ("RuntimeInit", "Apply"),
 )
 PEM_SUFFIX = "public.pem"
 BOOLEAN_SETTINGS = {
