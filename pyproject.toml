@@ -11,6 +11,7 @@ dependencies = [
     "olefile>=0.46",
     "dnfile>=0.15",
     "capstone>=5.0",
+    "pyelftools>=0.29",
 ]
 
 [tool.ruff]

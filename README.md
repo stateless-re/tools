@@ -25,6 +25,7 @@ Everything here is static. The tools parse files; they never run them.
 | [families/wmrat](families/wmrat) | BITTER's WmRAT: C2 host, port and the build's string transform (flat, position-dependent or XOR-index subtraction) | [PapRAT's one-time password is 123456](https://stateless-re.github.io/2026/paprat-otp/) |
 | [families/bubbleloader](families/bubbleloader) | BubbleLoader-patched hosts: carrier PNG resource, stage-2 key PNG and optional wrapper, stage-2 machine checks (TSC, CPU count, InterruptTime, BeingDebugged, GetLastInputInfo), stage-3 key; writes the original payload PE | [BubbleLoader's 24 samples carry one stealer, its downloader, or a stub that only exits](https://stateless-re.github.io/2026/bubbleloader-winrate/) |
 | [families/lotuslite](families/lotuslite) | Lotuslite V2 (Mustang Panda, fake PDFgear `CommonLib.dll`): C2 IPs, UDP/WSS ports, flags and paths from the XOR 0x55 config via IL evaluation; embedded RSA key fingerprint; instance lock and persistence strings | [Lotuslite V2 talks to port 53 without speaking DNS](https://stateless-re.github.io/2026/lotuslite-v2-pro1/) |
+| [families/cling](families/cling) | Cling / ClingSTUN Linux bot: STUN server list, `selfrep` tags, exploit targets and persistence markers from any build; finds the ChaCha20 key and decrypts the encrypted string table | [ClingSTUN's scanner checksums 20 bytes of every SYN and sends 256](https://stateless-re.github.io/2026/clingstun-syn-checksum/) |
 | [samples/ecaa3ca51c1e](samples/ecaa3ca51c1e) | FrauPDF installer: string tables, URLs, embedded files, payload blob and `uid` decoding | [FrauPDF's installer checks its own file name before it asks for a payload](https://stateless-re.github.io/2026/fraupdf-installer/) |
 
 ## Layout
@@ -37,7 +38,7 @@ Each folder has a README with usage, example output, the sample hashes it was te
 ## Running
 
 ```sh
-pip install pefile cryptography dissect.util olefile dnfile androguard capstone
+pip install pefile cryptography dissect.util olefile dnfile androguard capstone pyelftools
 python families/2cloader/extract.py SAMPLE.exe
 ```
 
